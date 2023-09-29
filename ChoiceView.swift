@@ -1,20 +1,15 @@
-//
-//  ChoiceView.swift
-//  AnimationsAndLoops
-//
-//  Created by Efe Ozalp on 9/29/23.
-//
-
 import SwiftUI
+
+//MARK: Stretch #3
+
+/* Remove the Text below and add any code needed
+ * for your personal animation.
+ */
 
 struct ChoiceView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("?")
+            .font(.largeTitle)
     }
 }
 
-struct ChoiceView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChoiceView()
-    }
-}

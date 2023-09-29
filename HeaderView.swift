@@ -1,20 +1,15 @@
-//
-//  HeaderView.swift
-//  AnimationsAndLoops
-//
-//  Created by Efe Ozalp on 9/29/23.
-//
-
 import SwiftUI
 
 struct HeaderView: View {
+    let name: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Group {
+            Divider()
+            Text("\(name)")
+                .frame(maxWidth: .infinity, alignment: .center)
+                .font(.title)
+            Divider()
+        }
     }
 }
 
-struct HeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        HeaderView()
-    }
-}

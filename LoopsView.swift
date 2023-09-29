@@ -1,20 +1,43 @@
-//
-//  LoopsView.swift
-//  AnimationsAndLoops
-//
-//  Created by Luke J. Sivulka on 9/29/23.
-//
-
 import SwiftUI
 
 struct LoopsView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HeaderView(name: "Animations Challenge")
+        Spacer()
+        VStack(spacing: 50) {
+            Text("MVP").underline(true, color: Color.black)
+            HStack(spacing: 50) {
+                SpinningView1()
+                SpinningView2()
+            }
+            Text("Stretch #1").underline(true, color: Color.black)
+            HStack(spacing: 50) {
+                 FlippingView1()
+                 FlippingView2()
+            }
+           
+            Text("Stretch #2").underline(true, color: Color.black)
+            HStack(spacing: 50) {
+                MovingView()
+            }
+            
+            Text("Stretch #3").underline(true, color: Color.black)
+            HStack(spacing: 50) {
+                ChoiceView()
+            }
+        }
+        Spacer()
+        FooterView()
     }
 }
 
-struct LoopsView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoopsView()
-    }
-}
+
+
+
+
+
+
+
+
+

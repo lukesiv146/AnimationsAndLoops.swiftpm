@@ -8,8 +8,9 @@ struct SpinningView1: View {
         Button("Spins") {
             //MARK: MVP - Part I
             
-            
-            
+            withAnimation(.easeIn(duration: 1.0)) {
+                            currentDegree += 360
+                        }
             
             
         }
@@ -18,8 +19,7 @@ struct SpinningView1: View {
         .foregroundColor(.white)
         .clipShape(RoundedRectangle(cornerRadius: 10.0))
         //MARK: MVP - Part II
-        
-        
+        .rotationEffect(Angle(degrees: currentDegree))
         
         
         

@@ -171,79 +171,95 @@ struct LoopsView: View {
         for value in values {
             output += value + " "
             
+            
+        }
+            
         }
         
+        func stretch1ButtonPressed() {
+            
+            setValues()
+            
+            output = values.joined(separator: ", ")
+            
+            
+            
+            
+        }
         
-    }
-    
-    func stretch1ButtonPressed() {
-        
-        setValues()
-        
-        output = values.joined(separator: ", ")
-                    
-     
-        
-        
-    }
-    
     func stretch2ButtonPressed() {
-        
         setValues()
-        var maximum = Int(values[0])
+        var maximum = 0 
         
         // MARK: - Stretch #2
+        for stringValue in values {
+            if let intValue = Int(stringValue) {
+                if intValue > maximum {
+                    maximum = intValue
+                }
+            }
+        }
         
-        
-        
-        
-        
-        
-        
-        output = "After searching the array, \(maximum!) is the largest"
+        output = "After searching the array, \(maximum) is the largest"
     }
-    
-    func stretch3ButtonPressed() {
         
-        setValues()
-        var sum = 0
+        func stretch3ButtonPressed() {
+            
+            setValues()
+            var sum = 0
+            
+            for value in values {
+                if let intValue = Int(value) {
+                    sum += intValue
+                }
+            }
+            
+            
+            output = "The total of the array is \(sum)"
+        }
         
-        for value in values {
-                        if let intValue = Int(value) {
-                            sum += intValue
-                        }
-                    }
-        
-        output = "The total of the array is \(sum)"
-    }
-    
     func stretch4ButtonPressed() {
-        
         setValues()
-        var minimum = Int(values[0])
+        
+        if values.isEmpty {
+            output = "Please enter numbers in the text fields first."
+            return
+        }
+        
+        guard let firstNumber = Int(values[0]) else {
+            output = "Invalid input: \(values[0])"
+            return
+        }
+        var minimum = firstNumber
         var index = 0
         
-        // MARK: - Stretch #4
+        for (currentIndex, stringValue) in values.enumerated() {
+            if let number = Int(stringValue) {
+                if number < minimum {
+                    minimum = number
+                    index = currentIndex
+                }
+            } else {
+                output = "Invalid input: \(stringValue)"
+                return
+            }
+        }
         
-       
-        
-        
-        
-        
-        output = "After searching the array, we have found the minimum is \(minimum!) and is in index # \(index)"
+        output = "After searching the array, we have found the minimum is \(minimum) and is in index # \(index)"
     }
-    
-    func stretch5ButtonPressed() {
+
         
+    func stretch5ButtonPressed() {
         setValues()
         
-        // MARK: - Stretch #5
+        output = ""
         
-       
-        
-        
-        
-        
-        
+        for (name, score) in namesAndScores {
+            output += "\(name): \(score) points\n"
+        }
     }
-}
+
+    }
+
+
+

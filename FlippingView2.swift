@@ -8,10 +8,9 @@ struct FlippingView2: View {
         Button(action: {
             //MARK: Stretch #1 - Part II
             
-            
-            
-            
-            
+            withAnimation(.easeIn(duration: 1.0)) {
+                currentRotation += 360
+            }
         }, label: {
             Text("Flips")
                 .frame(width: 100, height: 50)
@@ -19,11 +18,12 @@ struct FlippingView2: View {
                 .foregroundColor(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 10.0))
             //MARK: Stretch #1 - Part III
-                
-            
-            
-            
-            
+                .rotation3DEffect(
+                    Angle(degrees: currentRotation),
+                    axis: (x: 1.0, y: 0.0, z: 0.0),
+                    anchor: .center,
+                    anchorZ: 0.0,
+                    perspective: 1.0)
         })
     }
 }

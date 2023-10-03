@@ -17,8 +17,6 @@ struct SpinningView2: View {
             
                 .rotationEffect(Angle(degrees: currentDegree))
                 .animation(.easeIn(duration: 2), value: currentDegree)
-            
-            
         })
     }
 }

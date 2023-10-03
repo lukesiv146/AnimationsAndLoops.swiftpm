@@ -13,13 +13,28 @@ struct MovingView: View {
                 .foregroundColor(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 10.0))
                 .offset(x: xPosition, y: yPosition)
+            
             //MARK: Stretch #2
+            HStack{
+                Image(systemName: "arrow.up")
+                    .onTapGesture {
+                        yPosition -= 10
+                    }
+                Image(systemName: "arrow.left")
+                    .onTapGesture {
+                        xPosition -= 10
+                    }
+                Image(systemName: "arrow.right")
+                    .onTapGesture {
+                        xPosition += 10
+                    }
+                Image(systemName: "arrow.down")
+                    .onTapGesture {
+                        yPosition += 10
+                    }
+            }
             
-            
-            
-            
-            
-            
+
         }
         
     }

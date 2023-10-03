@@ -13,10 +13,10 @@ struct AnimationsView: View {
             }
             Text("Stretch #1").underline(true, color: Color.black)
             HStack(spacing: 50) {
-                 FlippingView1()
-                 FlippingView2()
+                FlippingView1()
+                FlippingView2()
             }
-           
+            
             Text("Stretch #2").underline(true, color: Color.black)
             HStack(spacing: 50) {
                 MovingView()

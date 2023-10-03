@@ -11,8 +11,6 @@ struct SpinningView1: View {
             withAnimation(.easeIn(duration: 1.0)) {
                             currentDegree += 360
                         }
-            
-            
         }
         .frame(width: 100, height: 50)
         .background(.blue)
@@ -20,8 +18,5 @@ struct SpinningView1: View {
         .clipShape(RoundedRectangle(cornerRadius: 10.0))
         //MARK: MVP - Part II
         .rotationEffect(Angle(degrees: currentDegree))
-        
-        
-        
     }
 }

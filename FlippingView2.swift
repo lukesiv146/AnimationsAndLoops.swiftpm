@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct FlippingView2: View {
-    
+    @State private var flip2: Bool = false
     @State var currentRotation = 0.0
     
     var body: some View {

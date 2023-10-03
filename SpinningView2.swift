@@ -6,7 +6,7 @@ struct SpinningView2: View {
     
     var body: some View {
         Button(action: {
-            currentDegree += 360
+                currentDegree += 360
         }, label: {
             Text("Spins")
                 .frame(width: 100, height: 50)
@@ -14,9 +14,9 @@ struct SpinningView2: View {
                 .foregroundColor(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 10.0))
             //MARK: MVP - Part III
-                
-                .rotationEffect(Angle(degrees: currentDegree))
             
+                .rotationEffect(Angle(degrees: currentDegree))
+                .animation(.easeIn(duration: 2), value: currentDegree)
             
             
         })

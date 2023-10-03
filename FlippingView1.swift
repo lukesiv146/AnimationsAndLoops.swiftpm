@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct FlippingView1: View {
-    
+    @State private var flip: Bool = false
     @State var currentRotation = 0.0
     
     var body: some View {
@@ -13,7 +13,14 @@ struct FlippingView1: View {
         .foregroundColor(.white)
         .clipShape(RoundedRectangle(cornerRadius: 10.0))
         //MARK: Stretch #1 - Part I
-        
+        .rotation3DEffect(
+                        Angle(degrees: currentRotation),
+                        axis: (x: 1.0, y: 0.0, z: 0.0),
+                        anchor: .center,
+                        anchorZ: 0.0,
+                        perspective: 1.0)
+        .animation(.default)
+                        
         
         
         
